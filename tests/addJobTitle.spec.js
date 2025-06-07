@@ -1,0 +1,17 @@
+import { test, expect } from '@playwright/test';
+import data from "../testdata/login.json"
+
+test("verify add job title",async({page})=>{
+await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+await page.locator("input[placeholder='Username']").fill(data.username)
+
+await page.locator("input[name='password']").fill(data.password)
+await page.locator("button[type='submit']").click()
+await page.locator("//span[text()='Admin']").click()
+ await page.locator("(//li[contains(@class,'oxd-topbar-body-nav-tab --parent')]/following-sibling::li)[1]").click()
+await page.locator("//a[normalize-space(text())='Job Titles']").click()
+await page.locator("i.oxd-icon.bi-plus.oxd-button-icon").click()
+await page.locator("(//label[normalize-space(text())='Job Title']/following::input)[1]").fill("qa enginner 1")
+
+await expect(page.locator("//span[text()='Already exists']")).toBeVisible()
+})
