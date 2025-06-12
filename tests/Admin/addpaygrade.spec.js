@@ -12,7 +12,8 @@ test("verify add pay grade", async ({ page }) => {
   await page.locator("//a[normalize-space(text())='Pay Grades']").click()
 
   await page.locator("//button[contains(.,'Add')]").click()
-  await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill(data.name)
+  let r = (Math.random() + 1).toString(36).substring(7)
+  await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill(data.name+r)
   await page.locator("button[type='submit']").click()
 
   await expect(page.locator('xpath=(//h6[contains(@class,"oxd-text oxd-text--h6")])[2]')).toHaveText("Add Pay Grade");

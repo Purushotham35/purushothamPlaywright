@@ -12,8 +12,8 @@ test("verify add employment status", async ({ page }) => {
 
 await page.locator("(//a[@class='oxd-topbar-body-nav-tab-link'])[3]").click()
 await page.locator("//i[contains(@class,'oxd-icon bi-plus')]").click()
-
-await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill(data.name)
+let r = (Math.random() + 1).toString(36).substring(7)
+await page.locator("(//input[@class='oxd-input oxd-input--active'])[2]").fill(data.name+r)
 
 
 await page.locator("//button[@type='submit']").click()
