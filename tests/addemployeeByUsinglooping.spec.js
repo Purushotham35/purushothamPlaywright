@@ -24,9 +24,8 @@ await page.locator("input[name='firstName']").fill(employeeList[title].firstNAME
 
 await page.locator("input[name='lastName']").fill((employeeList[title].LastName))
 await page.locator("button[type='submit']").click()
+
 //await expect(page.locator("//body[@data-new-gr-c-s-check-loaded='14.1240.0']")).toContainText('Successfully saved');
-
-
 
 })
 }
