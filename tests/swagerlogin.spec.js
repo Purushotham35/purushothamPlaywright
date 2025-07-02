@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
- test("verify login functionality with valid credentials",async({page})=>{
+ test("verify login functionality with valid credentials", {tag: '@smoke',}, async({page})=>{
 await page.goto("https://www.saucedemo.com/v1/")
 await page.locator("input[data-test='username']").fill("standard_user")
 await page.locator("input[type='password']").fill("secret_sauce")

@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 import data from "../../testdata/login.json"
 
-test("verify add workshift", async ({ page }) => {
+test("verify add workshift", {tag:'@work'},async ({ page }) => {
   await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
   await page.locator("input[placeholder='Username']").fill(data.username)
   await page.locator("input[name='password']").fill(data.password)

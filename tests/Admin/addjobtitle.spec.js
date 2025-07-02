@@ -5,7 +5,7 @@ var password="admin123"
 
 test("verify add job title",async({page})=>{
 await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-await page.locator("input[placeholder='Username']").fill(username)
+await page.locator('(//input[@class="oxd-input oxd-input--active"])[1]').fill("Admin")
 
 await page.locator("input[name='password']").fill(password)
 await page.locator("button[type='submit']").click()

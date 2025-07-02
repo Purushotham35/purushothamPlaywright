@@ -5,7 +5,7 @@ import data from "../testdata/login.json"
 
 
 
-test("verify checkboxes using loops",async({page})=>{
+test("verify checkboxes using loops",{tag: '@smoke'},async({page})=>{
 
  await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
   await page.locator("input[placeholder='Username']").fill(data.username)

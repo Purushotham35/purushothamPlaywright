@@ -5,7 +5,7 @@ import data1 from '../../testdata/add pay grade.json';
 
 test.beforeEach(async({page})=>{
 await page.goto("http://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
-await page.locator("input[name='username']").fill("Admin")
+await page.getByPlaceholder("username").fill("Admin")
 await page.locator(`input[name="password"]`).fill("admin123")
 
 await page.locator("button[type='submit']").click()

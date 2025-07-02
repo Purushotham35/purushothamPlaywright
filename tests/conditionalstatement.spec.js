@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test("constional statement using Switch block", async ({
+test("constional statement using Switch block",{tag:'@work'}, async ({
   page,
   browserName,
 }) => {
