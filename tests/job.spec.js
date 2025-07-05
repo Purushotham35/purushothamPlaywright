@@ -11,7 +11,6 @@ test.describe("verify login functionality",()=>{
 
 test.beforeEach(async ({ browser }) => {
   page = await browser.newPage()
- 
   admin = new job(page)
   login = new loginPage(page)
 

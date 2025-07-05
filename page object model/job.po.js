@@ -1,8 +1,6 @@
 
+import { expect } from "@playwright/test"
 
-
-
-const { expect } = require('@playwright/test');
 exports.job=class job{
 
     constructor(page){
