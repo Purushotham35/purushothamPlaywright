@@ -5,14 +5,13 @@ import { job } from '../page object model/job.po'
 import data from '../testdata/login.json'
 
 let page
-let dB
 let login
 let admin
 test.describe("verify login functionality",()=>{
 
 test.beforeEach(async ({ browser }) => {
   page = await browser.newPage()
-  dB = new addEmp(page)
+ 
   admin = new job(page)
   login = new loginPage(page)
 
