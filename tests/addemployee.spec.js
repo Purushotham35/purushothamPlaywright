@@ -20,11 +20,7 @@ import data from '../testdata/login.json'
     
 
 test("add emp",async()=>{
-    await dB.clickOnPim()
-    await dB.clickOnaddemployee()
-await dB.inputs("purushotham","md")
-await dB.save()
-await dB.verify()
 
+await dB.addEmp1("purushotham","md",'testdata/files/images cheeatah.jpeg')
 
 })

@@ -1,6 +1,6 @@
-import{ exprct} from '@playwright/test'
+import{ expect} from '@playwright/test'
 
-exports.elements=class elements{
+exports.Elements=class elements{
     constructor(page){
         this.page=page
 
@@ -14,17 +14,17 @@ exports.elements=class elements{
         this.clickOntooltip=page.getByText("Tool Tips")
          this.clickOnHoverme=page.getByText('Hover me to see')
          this.hovermesee=page.getByPlaceholder("Hover me to see")
-       
-
-
-
-
+         this.clickOnCheckbox=page.locator("//span[text()='Check Box']")
+         this.checkboxeLocator=page.locator('span[class="rct-checkbox"]>svg')
+         this.checkVerify=page.locator("//span[text()='You have selected :']")
+          this.Foruncheck=page.locator('span[class="rct-checkbox"]>svg')
+          
     }
     async launchDemoqaUrl(){
         await this.page.goto("https://demoqa.com")
-
-       
+   
     }
+
      async buttonMethods(){
         await this.clickOnElementsbutton.click()
         await this.clickOnButton.click()
@@ -36,12 +36,25 @@ exports.elements=class elements{
         await this.clickOnHoverme.hover()
         await this.hovermesee.hover()
 
+        
 
        
+    }
+    async checkboxes(){
+  await this.clickOnElementsbutton.click()
+  await this.clickOnCheckbox.click()
+  await this.checkboxeLocator.check()
+await expect(this.checkVerify).toHaveText("You have selected :")
+
+
+
     }
 
 
 
+    }
+    
+     
 
 
 
@@ -61,4 +74,6 @@ exports.elements=class elements{
 
 
 
-}
+
+
+

@@ -16,6 +16,7 @@ require('dotenv').config()
  */
 export default defineConfig({
 
+//reporter: "allure-playwright",
     
   timeout: 60000,
   expect:{
@@ -36,7 +37,7 @@ timeout:30000,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'html',
+  reporter: [['html'], ["dot"], ['json', { outputFile: 'results.json' }],["allure-playwright"]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     headless: false,
@@ -50,9 +51,24 @@ timeout:30000,
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+name:"setup",
+use:{
+...devices['Desktop Chrome'],
+channel:'chrome'
+
+},
+testMatch:/.*\.setup\.js/,
+
+
+
     },
+
+
+
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
     // {
     //   name: 'firefox',
@@ -81,10 +97,16 @@ timeout:30000,
        //name: 'Microsoft Edge',
       // use: { ...devices['Desktop Edge'], channel: 'msedge' },
      // },
-    // {
-    //  name: 'Google Chrome',
-    //  use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    //  },
+    {
+     name: 'Google Chrome',
+     use: { 
+       ...devices['Desktop Chrome'], 
+       channel: 'chrome',
+       //storageState: ".auth/user.json"
+     },
+    //dependencies:['setup'],
+     },
+
   ],
 
   /* Run your local dev server before starting the tests */

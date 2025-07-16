@@ -1,0 +1,230 @@
+{
+  "config": {
+    "configFile": "C:\\Playwright Automation\\playwright.config.js",
+    "rootDir": "C:/Playwright Automation/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "dot",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "results.json"
+        }
+      ],
+      [
+        "C:\\Playwright Automation\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Playwright Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "C:/Playwright Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.setup\\.js/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Playwright Automation/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Google Chrome",
+        "name": "Google Chrome",
+        "testDir": "C:/Playwright Automation/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.52.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "apiTest\\getRequest.spec.js",
+      "file": "apiTest/getRequest.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "request get api",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1247,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js:7:27",
+                    "location": {
+                      "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                      "column": 27,
+                      "line": 7
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m getAllUser \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m\"https://reqres.in/api/users?page=2\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(getAllUser\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   expect(getAllUser\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAllUser\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                        "column": 27,
+                        "line": 7
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m  5 |\u001b[39m   \u001b[36mconst\u001b[39m getAllUser \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m request\u001b[33m.\u001b[39m\u001b[36mget\u001b[39m(\u001b[32m\"https://reqres.in/api/users?page=2\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  6 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  7 |\u001b[39m   expect(getAllUser\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  8 |\u001b[39m   expect(getAllUser\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m getAllUser\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js:7:27\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-07-09T17:02:26.922Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Playwright Automation\\test-results\\apiTest-getRequest-request-get-api-Google-Chrome\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                    "column": 27,
+                    "line": 7
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "45f948ba7968602fe2f8-f98911435bb191fd1dd8",
+          "file": "apiTest/getRequest.spec.js",
+          "line": 4,
+          "column": 5
+        },
+        {
+          "title": "request get api 2",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "Google Chrome",
+              "projectName": "Google Chrome",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1725,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n    at C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js:32:25",
+                    "location": {
+                      "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                      "column": 25,
+                      "line": 32
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 30 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m   expect(subunits\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   expect(subunits\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m subunits\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                        "column": 25,
+                        "line": 32
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 30 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 31 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m   expect(subunits\u001b[33m.\u001b[39mok())\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 33 |\u001b[39m   expect(subunits\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m   \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m subunits\u001b[33m.\u001b[39mjson()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js:32:25\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-07-09T17:02:29.422Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "_error-context-0",
+                      "contentType": "text/markdown",
+                      "path": "C:\\Playwright Automation\\test-results\\apiTest-getRequest-request-get-api-2-Google-Chrome\\error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\Playwright Automation\\tests\\apiTest\\getRequest.spec.js",
+                    "column": 25,
+                    "line": 32
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "45f948ba7968602fe2f8-87e9116689ea37c3bc03",
+          "file": "apiTest/getRequest.spec.js",
+          "line": 23,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-07-09T17:02:25.616Z",
+    "duration": 5585.93,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 2,
+    "flaky": 0
+  }
+}

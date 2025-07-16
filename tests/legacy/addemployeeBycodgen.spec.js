@@ -3,9 +3,7 @@ import { test, expect } from "@playwright/test";
 import data from "../../testdata/addemployee.json";
 
 test("test", async ({ page }) => {
-  await page.goto(
-    "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-  );
+  await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login" );
   await page.getByRole("textbox", { name: "Username" }).click();
   await page.getByRole("textbox", { name: "Username" }).press("CapsLock");
   await page.getByRole("textbox", { name: "Username" }).fill("A");

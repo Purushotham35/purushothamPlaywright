@@ -2,20 +2,13 @@ import { test, expect } from "@playwright/test";
 
 import data from "../../testdata/login.json";
 
-test(
-  "verify login with valid credentials",
-  { tag: "@smoke" },
-  async ({ page }) => {
-    await page.goto(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login"
-    );
+test("verify login with valid credentials",{ tag: "@smoke" },async ({ page }) => {
+    await page.goto("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
     await page.locator("input[name='username']").fill(process.env.ORG_USERNAME);
     await page.locator("input[type='password']").fill(process.env.ORG_PASSWORD);
     await page.locator("button[type='submit']").click();
 
-    await expect(page).toHaveURL(
-      "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index"
-    );
+    await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
   }
 );
 test("verify login with valid username and invalid password", async ({
